@@ -13,3 +13,9 @@ Brandeis community members [register here](https://calendar.library.brandeis.edu
 - Session 6 (Jul 21): Statistical tests and models 2
 - Session 7 (Jul 28): Programming fundamentals in R
 - Session 8 (Aug 04): Web scraping and text mining
+
+## Installation Instructions
+This workshop uses R and RStudio Desktop.
+1. Download and install R from the [Comprehensive R Archive Network](https://cran.rstudio.com/)
+2. Download and install the free version of [RStudio Desktop](https://rstudio.com/products/rstudio/download/).
+If you do not have drive space or cannot download software for some reason, there is a [free cloud-based version of RStudio](https://rstudio.cloud/). 
