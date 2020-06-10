@@ -4,6 +4,8 @@ through Brandeis Library Data Services.
 
 Brandeis community members [register here](https://calendar.library.brandeis.edu/calendar/workshops/summeR2020).
 
+Access the [Zoom Classroom link and Session Recordings here](https://docs.google.com/document/d/1-eeemJIYWoDuRAUvtmO5TKnyAUYvORIzNCFNdfnin5c/edit?usp=sharing). This workshop meets on Tuesdays at 1pm ET through August 4th.
+
 ## Materials
 - Session 1 (Jun 09): Introduction to R and the Tidyverse [[script](https://github.com/DeisData/summer-of-r/blob/master/Intro-to-R-and-the-Tidyverse_20200609.R) / [dataset](https://github.com/DeisData/summer-of-r/blob/master/world_happiness.csv)]
 - Session 2 (Jun 16): Data visualization with ggplot
