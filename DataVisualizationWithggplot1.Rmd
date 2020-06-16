@@ -184,9 +184,10 @@ If you would like to play with other themes, try the ggthemes package!
 ```+theme_wsj()```
 ```+theme_solarized()```
 
-* [TidyTuesday](https://github.com/rfordatascience/tidytuesday): 
-  * This week is Ramen Ratings data. #TidyTuesday Twitter 
+* [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/README.md): 
+  * This week is [African-American History data](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-06-16/readme.md). #TidyTuesday Twitter 
 ```{r #TidyTuesday}
-ramen_ratings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-04/ramen_ratings.csv")
+routes <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-06-16/slave_routes.csv")
+
 
 ```
