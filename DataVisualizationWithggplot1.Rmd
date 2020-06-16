@@ -1,7 +1,5 @@
 install.packages("rmarkdown")
-install.packages("tidyverse")
 library(rmarkdown)
-library(tidyverse)
 ---
 title: "Data visualization with ggplot"
 output: pdf_document
