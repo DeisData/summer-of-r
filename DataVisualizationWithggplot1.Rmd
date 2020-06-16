@@ -63,9 +63,8 @@ library(tidyverse)
 
 #### Let's learn ggplot2 with some wine  
   
-* [TidyTuesday](https://github.com/rfordatascience/tidytuesday): 
 
-* We will use last week's dataset. We can use this line of code to read in the  data from the github page. 
+* We will use the WineRatings.csv dataset. 
 
 ```{r load wine csv file}
 wine_ratings <- read_csv('WineRatings.csv')
