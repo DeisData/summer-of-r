@@ -1,0 +1,215 @@
+ID_Num,Country,C_Code,Region,IncomeGroup,Year,WomenParliament,LifeExpectancy,Education
+1,Afghanistan,AFG,South Asia,Low income,2017,27.7,64.13,NA
+2,Angola,AGO,Sub-Saharan Africa,Lower middle income,2017,38.2,60.38,NA
+3,Albania,ALB,Europe & Central Asia,Upper middle income,2017,27.9,78.33,57.38
+4,Andorra,AND,Europe & Central Asia,High income,2017,32.1,NA,NA
+5,Argentina,ARG,Latin America & Caribbean,Upper middle income,2017,38.9,76.37,89.96
+6,Armenia,ARM,Europe & Central Asia,Upper middle income,2017,18.1,74.8,52.25
+7,American Samoa,ASM,East Asia & Pacific,Upper middle income,2017,NA,NA,NA
+8,Antigua and Barbuda,ATG,Latin America & Caribbean,High income,2017,11.1,76.75,NA
+9,Australia,AUS,East Asia & Pacific,High income,2017,28.7,82.5,89
+10,Austria,AUT,Europe & Central Asia,High income,2017,30.6,81.64,85.06
+11,Azerbaijan,AZE,Europe & Central Asia,Upper middle income,2017,16.8,72.69,27.07
+12,Burundi,BDI,Sub-Saharan Africa,Low income,2017,36.4,60.9,6.05
+13,Belgium,BEL,Europe & Central Asia,High income,2017,38,81.44,79.66
+14,Benin,BEN,Sub-Saharan Africa,Low income,2017,7.2,61.17,12.27
+15,Burkina Faso,BFA,Sub-Saharan Africa,Low income,2017,11,60.77,6
+16,Bangladesh,BGD,South Asia,Lower middle income,2017,20.3,72.05,18.15
+17,Bulgaria,BGR,Europe & Central Asia,Upper middle income,2017,23.8,74.81,NA
+18,Bahrain,BHR,Middle East & North Africa,High income,2017,7.5,77.03,47.15
+19,"Bahamas, The",BHS,Latin America & Caribbean,High income,2017,12.8,73.55,NA
+20,Bosnia and Herzegovina,BIH,Europe & Central Asia,Upper middle income,2017,21.4,77.13,NA
+21,Belarus,BLR,Europe & Central Asia,Upper middle income,2017,34.5,74.13,88.45
+22,Belize,BLZ,Latin America & Caribbean,Upper middle income,2017,9.4,74.37,24.66
+23,Bermuda,BMU,North America,High income,2017,NA,81.44,17.83
+24,Bolivia,BOL,Latin America & Caribbean,Lower middle income,2017,53.1,70.95,NA
+25,Brazil,BRA,Latin America & Caribbean,Upper middle income,2017,10.7,75.46,51.34
+26,Barbados,BRB,Latin America & Caribbean,High income,2017,16.7,78.98,NA
+27,Brunei Darussalam,BRN,East Asia & Pacific,High income,2017,9.1,75.59,33.56
+28,Bhutan,BTN,South Asia,Lower middle income,2017,8.5,71.13,NA
+29,Botswana,BWA,Sub-Saharan Africa,Upper middle income,2017,9.5,68.81,24.86
+30,Central African Republic,CAF,Sub-Saharan Africa,Low income,2017,8.6,52.24,NA
+31,Canada,CAN,North America,High income,2017,26.3,82.25,68.92
+32,Switzerland,CHE,Europe & Central Asia,High income,2017,32.5,83.6,59.56
+33,Channel Islands,CHI,Europe & Central Asia,High income,2017,NA,82.77,NA
+34,Chile,CHL,Latin America & Caribbean,High income,2017,15.8,79.91,88.46
+35,China,CHN,East Asia & Pacific,Upper middle income,2017,24.2,76.47,49.07
+36,Cote d'Ivoire,CIV,Sub-Saharan Africa,Lower middle income,2017,10.6,57.02,9.34
+37,Cameroon,CMR,Sub-Saharan Africa,Lower middle income,2017,31.1,58.51,12.76
+38,"Congo, Dem. Rep.",COD,Sub-Saharan Africa,Low income,2017,8.9,60.03,NA
+39,"Congo, Rep.",COG,Sub-Saharan Africa,Lower middle income,2017,11.3,63.95,12.67
+40,Colombia,COL,Latin America & Caribbean,Upper middle income,2017,18.7,76.93,56.43
+41,Comoros,COM,Sub-Saharan Africa,Lower middle income,2017,6.1,63.91,NA
+42,Cabo Verde,CPV,Sub-Saharan Africa,Lower middle income,2017,23.6,72.57,24.4
+43,Costa Rica,CRI,Latin America & Caribbean,Upper middle income,2017,35.1,79.91,55.75
+44,Cuba,CUB,Latin America & Caribbean,Upper middle income,2017,48.9,78.66,39.91
+45,Curacao,CUW,Latin America & Caribbean,High income,2017,NA,78.02,NA
+46,Cayman Islands,CYM,Latin America & Caribbean,High income,2017,NA,NA,NA
+47,Cyprus,CYP,Europe & Central Asia,High income,2017,17.9,80.67,NA
+48,Czech Republic,CZE,Europe & Central Asia,High income,2017,20,79.48,64.08
+49,Germany,DEU,Europe & Central Asia,High income,2017,37,80.99,70.25
+50,Djibouti,DJI,Middle East & North Africa,Lower middle income,2017,10.8,65.89,NA
+51,Dominica,DMA,Latin America & Caribbean,Upper middle income,2017,25,NA,NA
+52,Denmark,DNK,Europe & Central Asia,High income,2017,37.4,81,80.62
+53,Dominican Republic,DOM,Latin America & Caribbean,Upper middle income,2017,26.8,73.69,59.92
+54,Algeria,DZA,Middle East & North Africa,Upper middle income,2017,25.8,76.5,47.65
+55,Ecuador,ECU,Latin America & Caribbean,Upper middle income,2017,38,76.58,NA
+56,"Egypt, Arab Rep.",EGY,Middle East & North Africa,Lower middle income,2017,14.9,71.66,35.16
+57,Eritrea,ERI,Sub-Saharan Africa,Low income,2017,22,65.54,NA
+58,Spain,ESP,Europe & Central Asia,High income,2017,39.1,83.33,88.85
+59,Estonia,EST,Europe & Central Asia,High income,2017,26.7,77.64,69.64
+60,Ethiopia,ETH,Sub-Saharan Africa,Low income,2017,38.8,65.87,NA
+61,Finland,FIN,Europe & Central Asia,High income,2017,42,81.43,88.2
+62,Fiji,FJI,East Asia & Pacific,Upper middle income,2017,16,67.25,NA
+63,France,FRA,Europe & Central Asia,High income,2017,39,82.52,65.63
+64,Faroe Islands,FRO,Europe & Central Asia,High income,2017,NA,82.4,NA
+65,"Micronesia, Fed. Sts.",FSM,East Asia & Pacific,Lower middle income,2017,0,67.62,NA
+66,Gabon,GAB,Sub-Saharan Africa,Upper middle income,2017,17.1,65.84,NA
+67,United Kingdom,GBR,Europe & Central Asia,High income,2017,32,81.16,60
+68,Georgia,GEO,Europe & Central Asia,Upper middle income,2017,16,73.41,56.81
+69,Ghana,GHA,Sub-Saharan Africa,Lower middle income,2017,12.7,63.46,16.01
+70,Gibraltar,GIB,Europe & Central Asia,High income,2017,NA,NA,NA
+71,Guinea,GIN,Sub-Saharan Africa,Low income,2017,21.9,60.71,NA
+72,"Gambia, The",GMB,Sub-Saharan Africa,Low income,2017,10.3,61.44,NA
+73,Guinea-Bissau,GNB,Sub-Saharan Africa,Low income,2017,13.7,57.67,NA
+74,Equatorial Guinea,GNQ,Sub-Saharan Africa,Upper middle income,2017,24,58.06,NA
+75,Greece,GRC,Europe & Central Asia,High income,2017,18.3,81.39,90
+76,Grenada,GRD,Latin America & Caribbean,Upper middle income,2017,33.3,72.39,89
+77,Greenland,GRL,Europe & Central Asia,High income,2017,NA,NA,NA
+78,Guatemala,GTM,Latin America & Caribbean,Upper middle income,2017,12.7,73.81,NA
+79,Guam,GUM,East Asia & Pacific,High income,2017,NA,79.63,NA
+80,Guyana,GUY,Latin America & Caribbean,Upper middle income,2017,31.9,69.62,NA
+81,"Hong Kong SAR, China",HKG,East Asia & Pacific,High income,2017,NA,84.68,74.33
+82,Honduras,HND,Latin America & Caribbean,Lower middle income,2017,25.8,74.9,NA
+83,Croatia,HRV,Europe & Central Asia,High income,2017,18.5,77.83,NA
+84,Haiti,HTI,Latin America & Caribbean,Low income,2017,2.5,63.29,NA
+85,Hungary,HUN,Europe & Central Asia,High income,2017,10.1,76.06,48.5
+86,Indonesia,IDN,East Asia & Pacific,Lower middle income,2017,19.8,71.28,36.44
+87,Isle of Man,IMN,Europe & Central Asia,High income,2017,NA,NA,NA
+88,India,IND,South Asia,Lower middle income,2017,11.8,69.17,27.44
+89,Ireland,IRL,Europe & Central Asia,High income,2017,22.2,81.96,77.78
+90,"Iran, Islamic Rep.",IRN,Middle East & North Africa,Upper middle income,2017,5.9,76.27,NA
+91,Iraq,IRQ,Middle East & North Africa,Upper middle income,2017,25.3,70.29,NA
+92,Iceland,ISL,Europe & Central Asia,High income,2017,47.6,82.2,71.85
+93,Israel,ISR,Middle East & North Africa,High income,2017,27.5,82.6,63.35
+94,Italy,ITA,Europe & Central Asia,High income,2017,31,83.24,61.93
+95,Jamaica,JAM,Latin America & Caribbean,Upper middle income,2017,17.5,74.27,NA
+96,Jordan,JOR,Middle East & North Africa,Upper middle income,2017,15.4,74.29,31.14
+97,Japan,JPN,East Asia & Pacific,High income,2017,9.3,84.1,NA
+98,Kazakhstan,KAZ,Europe & Central Asia,Upper middle income,2017,27.1,72.95,50.15
+99,Kenya,KEN,Sub-Saharan Africa,Lower middle income,2017,21.8,65.91,11.46
+100,Kyrgyz Republic,KGZ,Europe & Central Asia,Lower middle income,2017,19.2,71.2,42.82
+101,Cambodia,KHM,East Asia & Pacific,Lower middle income,2017,20.3,69.29,13.13
+102,Kiribati,KIR,East Asia & Pacific,Lower middle income,2017,6.5,67.85,NA
+103,St. Kitts and Nevis,KNA,Latin America & Caribbean,High income,2017,13.3,NA,NA
+104,"Korea, Rep.",KOR,East Asia & Pacific,High income,2017,17,82.63,94.35
+105,Kuwait,KWT,Middle East & North Africa,High income,2017,3.1,75.31,55.36
+106,Lao PDR,LAO,East Asia & Pacific,Lower middle income,2017,27.5,67.28,15.74
+107,Lebanon,LBN,Middle East & North Africa,Upper middle income,2017,3.1,78.83,NA
+108,Liberia,LBR,Sub-Saharan Africa,Low income,2017,12.3,63.3,NA
+109,Libya,LBY,Middle East & North Africa,Upper middle income,2017,16,72.52,NA
+110,St. Lucia,LCA,Latin America & Caribbean,Upper middle income,2017,16.7,75.91,19.88
+111,Liechtenstein,LIE,Europe & Central Asia,High income,2017,12,82.26,NA
+112,Sri Lanka,LKA,South Asia,Upper middle income,2017,5.8,76.65,18.96
+113,Lesotho,LSO,Sub-Saharan Africa,Lower middle income,2017,22.9,52.95,10.76
+114,Lithuania,LTU,Europe & Central Asia,High income,2017,21.3,74.67,72.42
+115,Luxembourg,LUX,Europe & Central Asia,High income,2017,28.3,82.69,19.15
+116,Latvia,LVA,Europe & Central Asia,High income,2017,16,74.68,88.06
+117,"Macao SAR, China",MAC,East Asia & Pacific,High income,2017,NA,83.99,84.71
+118,St. Martin (French part),MAF,Latin America & Caribbean,High income,2017,NA,79.72,NA
+119,Morocco,MAR,Middle East & North Africa,Lower middle income,2017,20.5,76.22,33.78
+120,Monaco,MCO,Europe & Central Asia,High income,2017,20.8,NA,NA
+121,Moldova,MDA,Europe & Central Asia,Lower middle income,2017,22.8,71.72,41.08
+122,Madagascar,MDG,Sub-Saharan Africa,Low income,2017,19.2,66.31,5.28
+123,Maldives,MDV,South Asia,Upper middle income,2017,5.9,78.33,31.22
+124,Mexico,MEX,Latin America & Caribbean,Upper middle income,2017,42.6,74.95,40.23
+125,Marshall Islands,MHL,East Asia & Pacific,Upper middle income,2017,9.1,NA,NA
+126,North Macedonia,MKD,Europe & Central Asia,Upper middle income,2017,34.2,75.59,NA
+127,Mali,MLI,Sub-Saharan Africa,Low income,2017,8.8,58.45,NA
+128,Malta,MLT,Middle East & North Africa,High income,2017,11.9,82.45,NA
+129,Myanmar,MMR,East Asia & Pacific,Lower middle income,2017,10.2,66.56,15.66
+130,Montenegro,MNE,Europe & Central Asia,Upper middle income,2017,23.5,76.67,58.19
+131,Mongolia,MNG,East Asia & Pacific,Lower middle income,2017,17.1,69.51,64.16
+132,Northern Mariana Islands,MNP,East Asia & Pacific,High income,2017,NA,NA,NA
+133,Mozambique,MOZ,Sub-Saharan Africa,Low income,2017,39.6,59.31,7.12
+134,Mauritania,MRT,Sub-Saharan Africa,Lower middle income,2017,25.2,64.46,5
+135,Mauritius,MUS,Sub-Saharan Africa,Upper middle income,2017,11.6,74.51,40.6
+136,Malawi,MWI,Sub-Saharan Africa,Low income,2017,16.7,63.28,NA
+137,Malaysia,MYS,East Asia & Pacific,Upper middle income,2017,10.4,75.83,43.72
+138,Namibia,NAM,Sub-Saharan Africa,Upper middle income,2017,41.3,63.02,NA
+139,New Caledonia,NCL,East Asia & Pacific,High income,2017,NA,77.15,NA
+140,Niger,NER,Sub-Saharan Africa,Low income,2017,17,61.6,3.73
+141,Nigeria,NGA,Sub-Saharan Africa,Lower middle income,2017,5.6,53.95,NA
+142,Nicaragua,NIC,Latin America & Caribbean,Lower middle income,2017,45.7,74.07,NA
+143,Netherlands,NLD,Europe & Central Asia,High income,2017,36,81.56,84.98
+144,Norway,NOR,Europe & Central Asia,High income,2017,39.6,82.51,81.99
+145,Nepal,NPL,South Asia,Low income,2017,29.6,70.17,11.59
+146,Nauru,NRU,East Asia & Pacific,Upper middle income,2017,10.5,NA,NA
+147,New Zealand,NZL,East Asia & Pacific,High income,2017,34.2,81.66,82.03
+148,Oman,OMN,Middle East & North Africa,High income,2017,1.2,77.39,38.13
+149,Pakistan,PAK,South Asia,Lower middle income,2017,20.6,66.95,9.35
+150,Panama,PAN,Latin America & Caribbean,High income,2017,18.3,78.15,NA
+151,Peru,PER,Latin America & Caribbean,Upper middle income,2017,27.7,76.29,70.74
+152,Philippines,PHL,East Asia & Pacific,Lower middle income,2017,29.5,70.95,35.48
+153,Palau,PLW,East Asia & Pacific,High income,2017,12.5,NA,NA
+154,Papua New Guinea,PNG,East Asia & Pacific,Lower middle income,2017,0,64.01,NA
+155,Poland,POL,Europe & Central Asia,High income,2017,28,77.85,67.83
+156,Puerto Rico,PRI,Latin America & Caribbean,High income,2017,NA,79.63,NA
+157,"Korea, Dem. People<U+0092>s Rep.",PRK,East Asia & Pacific,Low income,2017,16.3,71.91,NA
+158,Portugal,PRT,Europe & Central Asia,High income,2017,34.8,81.12,63.94
+159,Paraguay,PRY,Latin America & Caribbean,Upper middle income,2017,13.8,73.99,NA
+160,French Polynesia,PYF,Middle East & North Africa,Lower middle income,2017,NA,77.25,NA
+161,Qatar,QAT,Middle East & North Africa,High income,2017,0,79.98,16.63
+162,Romania,ROU,Europe & Central Asia,Upper middle income,2017,20.7,75.31,NA
+163,Russian Federation,RUS,Europe & Central Asia,Upper middle income,2017,15.8,72.12,81.91
+164,Rwanda,RWA,Sub-Saharan Africa,Low income,2017,61.3,68.34,7.37
+165,Saudi Arabia,SAU,Middle East & North Africa,High income,2017,19.9,74.87,69.7
+166,Sudan,SDN,Sub-Saharan Africa,Lower middle income,2017,30.5,64.88,NA
+167,Senegal,SEN,Sub-Saharan Africa,Lower middle income,2017,41.8,67.38,11.51
+168,Singapore,SGP,East Asia & Pacific,High income,2017,23,82.9,84.79
+169,Solomon Islands,SLB,East Asia & Pacific,Lower middle income,2017,2,72.65,NA
+170,Sierra Leone,SLE,Sub-Saharan Africa,Low income,2017,12.4,53.9,NA
+171,El Salvador,SLV,Latin America & Caribbean,Lower middle income,2017,32.1,72.87,28.59
+172,San Marino,SMR,Europe & Central Asia,High income,2017,26.7,NA,NA
+173,Somalia,SOM,Sub-Saharan Africa,Low income,2017,24.4,56.71,NA
+174,Serbia,SRB,Europe & Central Asia,Upper middle income,2017,34.4,76.09,66.49
+175,South Sudan,SSD,Sub-Saharan Africa,Low income,2017,28.5,57.37,NA
+176,Sao Tome and Principe,STP,Sub-Saharan Africa,Lower middle income,2017,18.2,69.93,NA
+177,Suriname,SUR,Latin America & Caribbean,Upper middle income,2017,25.5,71.46,NA
+178,Slovak Republic,SVK,Europe & Central Asia,High income,2017,20,77.17,46.63
+179,Slovenia,SVN,Europe & Central Asia,High income,2017,36.7,81.18,78.59
+180,Sweden,SWE,Europe & Central Asia,High income,2017,43.6,82.31,66.99
+181,Eswatini,SWZ,Sub-Saharan Africa,Lower middle income,2017,6.2,58.32,NA
+182,Sint Maarten (Dutch part),SXM,Latin America & Caribbean,High income,2017,NA,NA,NA
+183,Seychelles,SYC,Sub-Saharan Africa,High income,2017,21.2,74.3,19.72
+184,Syrian Arab Republic,SYR,Middle East & North Africa,Low income,2017,13.2,70.97,NA
+185,Turks and Caicos Islands,TCA,Latin America & Caribbean,High income,2017,NA,NA,NA
+186,Chad,TCD,Sub-Saharan Africa,Low income,2017,12.8,53.71,NA
+187,Togo,TGO,Sub-Saharan Africa,Low income,2017,17.6,60.49,13.06
+188,Thailand,THA,East Asia & Pacific,Upper middle income,2017,4.8,76.68,NA
+189,Tajikistan,TJK,Europe & Central Asia,Low income,2017,19,70.65,31.26
+190,Turkmenistan,TKM,Europe & Central Asia,Upper middle income,2017,25.8,67.96,NA
+191,Timor-Leste,TLS,East Asia & Pacific,Lower middle income,2017,32.3,69.01,NA
+192,Tonga,TON,East Asia & Pacific,Upper middle income,2017,3.8,70.7,NA
+193,Trinidad and Tobago,TTO,Latin America & Caribbean,High income,2017,31,73.25,NA
+194,Tunisia,TUN,Middle East & North Africa,Lower middle income,2017,31.3,76.31,32.15
+195,Turkey,TUR,Europe & Central Asia,Upper middle income,2017,14.6,77.16,NA
+196,Tuvalu,TUV,East Asia & Pacific,Upper middle income,2017,6.7,NA,NA
+197,Tanzania,TZA,Sub-Saharan Africa,Low income,2017,36.4,64.48,NA
+198,Uganda,UGA,Sub-Saharan Africa,Low income,2017,34.3,62.52,NA
+199,Ukraine,UKR,Europe & Central Asia,Lower middle income,2017,12.3,71.78,NA
+200,Uruguay,URY,Latin America & Caribbean,High income,2017,20.2,77.63,63.13
+201,United States,USA,North America,High income,2017,19.4,78.54,88.17
+202,Uzbekistan,UZB,Europe & Central Asia,Lower middle income,2017,16,71.39,9.18
+203,St. Vincent and the Grenadines,VCT,Latin America & Caribbean,Upper middle income,2017,13,72.3,NA
+204,"Venezuela, RB",VEN,Latin America & Caribbean,Upper middle income,2017,22.2,72.25,NA
+205,British Virgin Islands,VGB,Latin America & Caribbean,High income,2017,NA,NA,NA
+206,Virgin Islands (U.S.),VIR,Latin America & Caribbean,High income,2017,NA,79.42,NA
+207,Vietnam,VNM,East Asia & Pacific,Lower middle income,2017,26.7,75.24,NA
+208,Vanuatu,VUT,East Asia & Pacific,Lower middle income,2017,0,70.17,NA
+209,Samoa,WSM,East Asia & Pacific,Upper middle income,2017,10,73.05,NA
+210,"Yemen, Rep.",YEM,Middle East & North Africa,Low income,2017,0,66.09,NA
+211,South Africa,ZAF,Sub-Saharan Africa,Upper middle income,2017,42,63.54,22.37
+212,Zambia,ZMB,Sub-Saharan Africa,Lower middle income,2017,18,63.04,NA
+213,Zimbabwe,ZWE,Sub-Saharan Africa,Lower middle income,2017,32.6,60.81,NA
+214,Zimbabwe,ZWE,Sub-Saharan Africa,Lower middle income,2021,32.6,60.81,NA

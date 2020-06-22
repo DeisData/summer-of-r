@@ -1,0 +1,175 @@
+---
+title: "Data Wrangling I"
+date: "6/22/2020"
+output: pdf_document
+---
+
+
+### Welcome to SummeR of R at the Brandeis Library! 
+
+
+Margarita Corral  
+
+mcorral@brandeis.edu  
+
+[Make an appointment with Margarita!](https://calendar.library.brandeis.edu/appointment/8518)  
+  
+  
+
+Claire Pontbriand 
+
+cpontbriand@brandeis.edu  
+
+[Make an appointment with Claire!](https://calendar.library.brandeis.edu/appointments/scidata)
+
+
+#### Data Wrangling Part 1: tidyr & dplyr
+
+Today we're going to be focused on getting data into a tidy format and some of the core functions in the tidyverse to transform your data! Our focus is going to be on the *tidyr* and *dplyr* packages in the tidyverse.
+
+A good guide for this material is the [Data Wrangling Cheat Sheet by RStudio](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+
+We start with loading the tidyverse (if you are new to the series you need to install the package first, delete the hashtag at line 34 to do that)
+```{r}
+#install.packages('tidyverse')
+library(tidyverse)
+```
+  
+    
+    
+##### The *tidyr* package has two main functions that are meant to help convert your data into a tidy format.  Remember, by tidy data we mean that each row is an observation and each column is a variable. 
+
+**1. gather()** 
+We use gather when we have multiple observations in one row (as opposed to tidy format with one observation in a row)
+
+"Untidy" data set 
+```{r}
+untidy_temperatures <- data.frame (City = c("Boston", "Miami"),
+                        Jan = c(36, 76 ),
+                        Feb = c(39, 78),
+                        Mar = c (45, 80)) #creating a data frame in a wide data format
+print(untidy_temperatures)
+```
+We can convert this to a tidy format by using the gather function: 
+```{r}
+tidy_temperatures <- gather(untidy_temperatures, key='Month', #Name of the new key column
+                     value='Avg_Temperature',  #Name of column for our values
+                     c (-City))                #Columns to gather 
+print(tidy_temperatures)
+```
+
+**2. spread()**
+We use spread when we have multiple rows for one observation. Here's an example: 
+```{r}
+untidy_HeightWeight <- data.frame (Person = c("A", "A", "B", "B"),
+                                   Measurement =c ("Height", "Weight", "Height", "Weight"),
+                                  Value =  c(60, 120, 75, 200))
+print(untidy_HeightWeight)
+  
+```
+The key argument tells you which column in the untidy dataframe you want to be converted into column names in the tidy version, and the value is the column you want to be inside the cells of the dataframe. 
+```{r}
+tidy_HeightWeight <- spread(untidy_HeightWeight, key=Measurement, value=Value)
+print(tidy_HeightWeight)
+```
+
+
+##### There are 5 Main *dplyr* functions, and you already know some of them!     
+
+**1. filter()**: gets specific rows from a dataframe  
+
+**2. select()**: lets us pull out specific columns from a dataframe  
+
+**3. summarize()**: allows you to create summary statistics from columns in a dataframe. 
+```{r}
+summarise(tidy_HeightWeight, avg_Height=mean(Height))
+```
+
+**4. arrange()**: diplays the dataframe sequentially based on variables.
+```{r}
+arrange(tidy_HeightWeight, Height)
+```
+```{r}
+arrange(tidy_HeightWeight, desc(Weight))
+```
+**4. mutate()**: Let's  create a new column! We are adding a column for the Body Mass Index (BMI)
+
+```{r}
+Tidy_BMI<-mutate(tidy_HeightWeight, BMI = 703*Weight/ (Height)^2)
+print(Tidy_BMI)
+```
+
+
+The five main *dplyr* functions have similarities:  
+
+1. all work with ```group_by()```  
+
+2. Need the dataframe name as their first argument inside the parentheses  
+
+3. Have  additional arguments that describe what to do with dataframe  
+4. Have a new dataframe as output  
+
+- [Summarized from Ch. 3 in R for Data Science](https://search.library.brandeis.edu/permalink/f/1skfba6/TN_sbo_s9781491910382)  
+
+##### Another very useful dplyr function  
+
+**case_when()** : Lets you do different things based on a condition  
+
+```{r}
+Tidy_BMI<-mutate(Tidy_BMI, Height_Class = case_when( Height > 65 ~ 'Tall', 
+                                                     Height < 65 ~ 'Short'))
+print(Tidy_BMI)
+```
+
+#### Now, it is your turn! Let's practise using the World_Indicators Data Set
+
+
+
+#Load the WorldIndicators dataset
+
+```{r}
+
+```
+
+
+
+#let's take a look at a summary of the dataframe
+
+```{r}
+
+```
+
+
+
+#You will see that some variables are characters. We want to transform them and make them "factors"
+
+WorldIndicators$Region<- as.factor(WorldIndicators$Region)
+WorldIndicators$IncomeGroup<- as.factor(WorldIndicators$IncomeGroup)
+
+#Run the summary again
+```{r}
+
+```
+
+##Looks like we have some bad data, the max year is 2101, I find this suspicious. Filter out anything greater than 2017
+```{r}
+
+```
+
+
+
+#Create a new variable that takes the value "Low" when Life Expectancy is less than 70 and "High" when Life Expectancy is higher than 70
+```{r}
+
+```
+
+
+##Get a table with the % of women in parliaments by Region. You will nee to use the group_by function
+```{r}
+
+```
+
+
+
+
+
