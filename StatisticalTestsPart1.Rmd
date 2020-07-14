@@ -1,0 +1,223 @@
+---
+title: "Statistical Tests Part1"
+date: "7/14/2020"
+output: html_document
+---
+
+### Welcome to this week's SummeR of R session, our first of two sessions learning about statistical models/tests in R!  
+
+Dr. Margarita Corral  
+
+mcorral@brandeis.edu  
+
+[Make an appointment with Margarita!](https://calendar.library.brandeis.edu/appointment/8518)  
+  
+  
+Dr. Claire Pontbriand 
+
+cpontbriand@brandeis.edu  
+
+[Make an appointment with Claire!](https://calendar.library.brandeis.edu/appointments/scidata)
+
+
+### Today we'll cover:
+- Exploring and summarizing data
+- Correlation and Chi-Squared test
+- T-test and ANOVAS
+- Checking assumptions
+
+
+### Set up
+To get started let's load or install the library's we'll be using. If this is your first time using one of the packages uncomment and run the appropriate install.package('package')
+```{r}
+#install.packages('tidyverse')
+library(tidyverse)
+
+#install.packages('car')
+library(car)
+
+#install.packages('broom')
+library(broom)
+
+#install.packages('dplyr')
+library(dplyr)
+
+#install.packages('ggplot2')
+library(ggplot2)
+```
+
+We're going to be analyzing penguins! See https://allisonhorst.github.io/palmerpenguins/
+
+```{r}
+#install.packages("remotes")
+remotes::install_github("allisonhorst/palmerpenguins")
+library(palmerpenguins)
+data(package = 'palmerpenguins')
+```
+
+
+## Let's start by exploring the data set
+```{r}
+View(penguins)
+```
+We can check the structure...
+```{r}
+str(penguins)
+``` 
+... and see the first six rows
+```{r}
+head(penguins)
+```
+
+I want to see how many penguins I have
+```{r}
+species_count <- count(penguins, species)
+View(species_count)
+```
+
+I can get the same table using piping. Pipes express a sequence of multiple operations in a clear way.  The tidyverse loads %>% for you automatically
+```{r}
+penguins %>% 
+  count(species)
+```
+
+I want to see summary statistics for each species
+of penguin
+```{r}
+penguins %>% 
+  group_by(species) %>% 
+  summarize(across(where(is.numeric), mean, na.rm = TRUE))
+```
+
+Is there a correlation between Flipper Lenght and Body Mass. Let's create a scatterplot first
+```{r}
+correlation_graph <- ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + geom_point() + geom_smooth(method = lm)
+correlation_graph
+```
+
+What's the correlation coefficient?
+```{r}
+cor.test(penguins$flipper_length_mm, penguins$body_mass_g)
+```
+
+Now, I want to see if there is relationship between species and island. As both variables are categorical,we need to run a chi-squared test
+```{r}
+ggplot(penguins, aes(x = species, fill = island)) + geom_bar()
+```
+
+```{r}
+chisq <- chisq.test(penguins$species, penguins$island)
+chisq
+```
+
+Is there a difference between males and females in their body mass?
+```{r}
+
+ggplot(penguins)+
+  geom_boxplot(aes(x=sex, y=body_mass_g, fill=sex))+
+  theme_classic()+
+  ylab("Body mass")+
+  xlab('')+
+  theme(legend.position = 'none')
+```
+
+
+
+# We can check to see if the two samples have equal variance by performing a leveneTest, inside the functions we put a formula of the structure 'continuous_variable ~ grouping'.
+```{r}
+leveneTest(body_mass_g~sex, data=penguins)
+```
+
+
+#Levene's test has a null hypothesis that the variances are equal,based on the results of our test we reject the null hypothesis  
+
+
+# We'll use the *t.test()* to compare the two means, the default for the function is to assume variances are not equal, and it performs a Welch Two Sample t-test. If we have equal variance we have to set the argument var.equal=TRUE which would run a Two-sample t-test.  
+```{r}
+t.test(penguins$body_mass_g ~ penguins$sex)
+```
+
+
+## Comparing means from multiple groups
+
+I would like to see if there are differences in the bill length between species
+I am going to start with a visualization
+```{r}
+ggplot(penguins, aes(x = species, y = bill_length_mm)) + geom_boxplot() 
+```
+
+We can use the *aov()* function to run our anova.  We'll check our model assumptions after we fit the model. You want to assign the model fit to a variable name because we'll use it to get the statistics and check assumptions.
+```{r}
+anova<-aov(bill_length_mm~species, data=penguins)
+```
+
+```{r}
+summary(anova)
+```
+Post-Hoc analysis to see where the differences are
+```{r}
+Tukey_test<- TukeyHSD(anova)
+```
+
+
+
+#This is kind of hard to work. Luckily the tidyverse has a package called broom (we loaded this in earlier) and broom has a function called *tidy()*
+```{r}
+Tukeys<-TukeyHSD(anova)%>%tidy()
+```
+
+
+
+#Let's highlight significant differences
+```{r}
+Tukeys<-Tukeys %>% mutate(sig = case_when(adj.p.value < .05~ '*', TRUE ~''))
+Tukeys
+```
+
+
+#We can also get a plot
+```{r}
+plot(Tukey_test)
+```
+
+
+Checking the homogeneity of variance assumption. 
+```{r}
+leveneTest(bill_length_mm ~ species, data=penguins)
+```
+Checking the normality assumption 
+```{r}
+plot(anova, 2)
+```
+or we can use the Shapiro_Wilk test
+```{r}
+anova_residuals <- residuals(object = anova )
+shapiro.test(x=anova_residuals)
+```
+
+The non-parametric alternative to one-way ANOVA is Kruskal-Wallis rank sum test, which can be used when ANNOVA assumptions are not met.
+
+```{r}
+kruskal.test(bill_length_mm~species, data=penguins)
+```
+
+
+
+### Good resources to check out for more variations/details:
+* [R cookbook](https://search.library.brandeis.edu/permalink/f/1skfba6/TN_sbo_s9780596809287) by Paul Teetor
+* [Learning Statistics with R](https://learningstatisticswithr.com/book/) by Danielle Navarro
+
+### What to do now?
+Practice wrangling and running stats on the titanic data set. Some questions you could answer:
+  - Is there a significant difference in age of the people that survived vs. not? 
+  - Is there a significant difference in age across passenger classes?
+```{r}
+#Load this package
+#install.packages('titanic')
+#library(titanic)
+#The package has a dataframe called Titanic that is now available for you to access 
+#View(Titanic)
+```
+
+
+
