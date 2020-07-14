@@ -12,7 +12,7 @@ Access the [Zoom Classroom link and Session Recordings here](https://docs.google
 - Session 3 (Jun 23): Data wrangling 1 [[script](https://github.com/DeisData/summer-of-r/blob/master/DataWrangling1.Rmd) / [dataset](https://github.com/DeisData/summer-of-r/blob/master/World_Indicators.csv)]
 - Session 4 (Jun 30): Data wrangling 2 [[script](https://github.com/DeisData/summer-of-r/blob/master/DataWrangling2.Rmd) / [data1: gdp.csv](https://github.com/DeisData/summer-of-r/blob/master/gdp.csv) / [data2: LifeExp.csv](https://github.com/DeisData/summer-of-r/blob/master/LifeExp.csv)]
 - Break  (July 7): No workshop
-- Session 5 (Jul 14): Statistical tests and models 1
+- Session 5 (Jul 14): Statistical tests and models 1 [[script](https://github.com/DeisData/summer-of-r/blob/master/StatisticalTestsPart1.Rmd)]
 - Session 6 (Jul 21): Statistical tests and models 2
 - Session 7 (Jul 28): Programming fundamentals in R
 - Session 8 (Aug 04): Web scraping and text mining
