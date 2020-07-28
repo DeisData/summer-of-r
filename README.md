@@ -14,7 +14,7 @@ Access the [Zoom Classroom link and Session Recordings here](https://docs.google
 - Break  (July 7): No workshop
 - Session 5 (Jul 14): Statistical tests and models 1 [[script](https://github.com/DeisData/summer-of-r/blob/master/StatisticalTestsPart1.Rmd)]
 - Session 6 (Jul 21): Statistical tests and models 2 [[script](https://github.com/DeisData/summer-of-r/blob/master/StatisticalTestsModelsPart2.Rmd) / [states.csv](https://github.com/DeisData/summer-of-r/blob/master/states.csv)]
-- Session 7 (Jul 28): Programming fundamentals in R
+- Session 7 (Jul 28): [Programming fundamentals in R](https://github.com/DeisData/summer-of-r/blob/master/program_fundamentals.Rmd) [[best practices challenge](https://github.com/DeisData/summer-of-r/blob/master/best_practices_challenge.R) / [temp_f.csv](https://github.com/DeisData/summer-of-r/blob/master/temp_f.csv)]
 - Session 8 (Aug 04): Web scraping and text mining
 
 ## Installation Instructions
