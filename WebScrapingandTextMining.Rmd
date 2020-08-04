@@ -1,0 +1,279 @@
+---
+title: "Web Scraping & Text Mining"
+date: "8/4/2020"
+output: pdf_document
+---
+
+#Welcome to the last session of our SummeR of R!
+
+Margarita Corral  - mcorral@brandeis.edu
+Claire Pontbriand - cpontbriand@brandeis.edu
+
+## Web Scraping
+
+Web scraping is the process of extracting data from websites. This process will allow us to transform unstructured data into a local database or spreadsheet, making their analysis and visualization easier (Olgun 2018).
+
+There are many R packages available to access data from web pages. In this session we will use the rvest package which is also part of the tidyverse <http://rvest.tidyverse.org/>
+
+Another way to extract data from websites is using APIs (Application Programming Interfaces) that some websites provide (e.g. Twitter, YouTube, Library of Congress, Citizen Science). <https://www.programmableweb.com/apis>
+APIs are "intermediaries" that allow one software to talk to another. Keep in mind that most APIs have limited usage policies. 
+
+```{r }
+#Installing the web scraping package rvest
+install.packages("rvest")
+library(rvest)
+```
+
+
+We are going to scrape the IMDB website for the 50 most popular movies in 2019
+
+<https://www.imdb.com/search/title/?year=2019&title_type=feature&>
+
+
+Reading the HTML code from the website to be scraped
+```{r}
+webpage <- read_html("https://www.imdb.com/search/title/?year=2019&title_type=feature&")
+```
+
+Knowing HTLM and CSS can be helpful, but we can use SelectorGadget to extract desired parts of the page
+https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html
+https://selectorgadget.com/
+Just install the Chrome Extension or drag the bookmarklet to your bookmark bar. 
+
+We start scraping the rankings section
+```{r}
+rank_html <- html_nodes (webpage, ".text-primary")
+```
+convert the ranking data to text
+```{r}
+rank_data <- html_text(rank_html)
+```
+
+explore my data
+```{r}
+head(rank_data)
+```
+We see these are characters. I am going to convert them to numerical
+```{r}
+rank_data<-as.numeric(rank_data)
+```
+
+Extracting titles
+```{r}
+
+title_html <- html_nodes(webpage,'.lister-item-header a')
+
+title_data <- html_text(title_html)
+
+head(title_data)
+```
+
+Extracting genre
+
+```{r}
+genre_html <- html_nodes(webpage,'.genre')
+genre_data <- html_text(genre_html)
+head(genre_data)
+
+```
+Removing \n
+```{r}
+genre_data<-gsub("\n", "", genre_data)
+genre_data
+```
+Removing trailing spaces
+```{r}
+library(stringr)
+genre_data<-str_trim(genre_data)
+genre_data
+```
+Geting only the first genre
+```{r}
+genre_data<-gsub(",.*","",genre_data)
+genre_data
+```
+
+Now we will extract runtime
+```{r}
+runtime_html <- html_nodes (webpage, ".runtime")
+runtime_data <- html_text(runtime_html)
+head (runtime_data)
+runtime_data<-gsub(" min","",runtime_data)
+runtime_data<-as.numeric(runtime_data)
+head (runtime_data)
+```
+
+
+
+Combining the data frames
+```{r}
+movies <-data.frame(Rank=rank_data, Title=title_data, Genre=genre_data, Runtime=runtime_data)
+```
+Let's check our data frame
+```{r}
+View(movies)
+```
+
+##Can you plot a bar graph to see the most popular genre?
+```{r}
+library(tidyverse)
+ggplot(movies, aes(x=Genre))+
+  geom_bar(stat="count", width=0.7, fill="steelblue")+
+  theme_minimal()
+
+```
+
+
+
+
+##Let's get some books to learn about text mining
+We can install the gutenbergr package. It will help us download and access public domain books/publications from the Project Gutenberg collection. 
+https://cran.r-project.org/web/packages/gutenbergr/vignettes/intro.html
+
+```{r}
+install.packages("gutenbergr")
+library(gutenbergr)
+```
+
+
+If you want to check information about books in the library, you can use the gutenberg_metadata
+```{r}
+gutenberg_metadata
+```
+
+
+Let's find the Gutenberg ID of "Alice's Adventures in Wonderland"
+```{r}
+gutenberg_metadata %>%
+  filter(title == "Alice's Adventures in Wonderland")
+```
+
+The gutenberg_works() function filters for English works, and shows the books that can be downloaded
+```{r}
+gutenberg_works(title == "Alice's Adventures in Wonderland")
+```
+
+```{r}
+Alice_wonderland<- gutenberg_works(title == "Alice's Adventures in Wonderland")
+Alice_wonderland
+```
+
+
+Let's download the book. I need to specify the ID. gutenberg_strip() removes the metadata
+```{r}
+library(magrittr)
+Alice_wonderland_book <- gutenberg_download(11)%>% gutenberg_strip()
+
+Alice_wonderland_book
+```
+
+Let's do some text analyisis using tidytext.Tidy text format is a table with one token per row. A token is a "meaningful unit of text, such a word, that we are interested in using for analyis" (Silge and Robinson, 2017:1)
+
+
+```{r}
+install.packages("tidytext")
+library(tidytext)
+```
+
+
+Let's tidy our data
+```{r}
+
+tidy_Alice<-Alice_wonderland_book %>%
+  unnest_tokens(word,text)
+tidy_Alice
+```
+
+
+
+Word frequencies
+```{r}
+tidy_Alice %>%
+  anti_join(stop_words)%>%
+  count(word, sort = TRUE)
+```
+
+Word Cloud
+```{r}
+install.packages("wordcloud")
+library(wordcloud)
+```
+
+
+```{r}
+tidy_Alice %>%
+  anti_join(stop_words) %>%
+  count(word) %>%
+  with(wordcloud(word, n, max.words = 50))
+```
+Let's add some color. See
+https://www.rdocumentation.org/packages/RColorBrewer/versions/1.1-2/topics/RColorBrewer
+https://www.datanovia.com/en/blog/the-a-z-of-rcolorbrewer-palette/
+```{r}
+tidy_Alice %>%
+  anti_join(stop_words) %>%
+  count(word) %>%
+  with(wordcloud(word, n, max.words = 50,colors=brewer.pal(8, "Dark2"))) 
+ 
+```
+
+
+Sentiment Analysis. The three general-purpose lexicons are
+AFINN, bing, and nrc
+```{r}
+get_sentiments("bing")
+```
+
+```{r}
+Alice_sentiment<-tidy_Alice%>%
+  inner_join(get_sentiments("bing"))%>%
+  count(word, sentiment)%>%
+  spread(sentiment, n, fill=0)%>%
+  mutate(sentiment=positive-negative)
+```
+
+```{r}
+ggplot(Alice_sentiment,aes(sentiment)) + geom_bar(stat="count",width=0.5, fill="steelblue")+
+  theme_minimal()
+```
+
+
+
+Tokenizing by N-gram
+```{r}
+
+tidy_bigram<-Alice_wonderland_book %>%
+  unnest_tokens(bigram, text, token="ngrams", n=2)
+
+tidy_bigram
+```
+
+Counting N-grams
+```{r}
+tidy_bigram%>%
+  count(bigram, sort=TRUE)
+```
+
+
+
+
+
+## Some useful resources
+
+Olgun Aydin. (2018). R Web Scraping Quick Start Guide. Packt Publishing.
+https://search.library.brandeis.edu/permalink/f/1skfba6/TN_sbo_s9781789138733
+
+Silge, J., & Robinson, David. (2017). Text mining with R : A tidy approach (First ed.).
+https://search.library.brandeis.edu/permalink/f/urfvar/BRAND_ALMA21366278860001921
+
+
+https://rpubs.com/hmgeiger/373949
+
+http://www.storybench.org/working-with-the-new-york-times-api-in-r/
+
+http://pablobarbera.com/big-data-upf/html/01c-apis.html
+
+https://www.r-bloggers.com/new-york-times-article-search-api-to-mongodb/
+
+https://www.r-bloggers.com/collecting-and-analyzing-twitter-data-using-r/
+
